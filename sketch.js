@@ -5,6 +5,7 @@ const Bodies = Matter.Bodies;
 
 var engine, world;
 var ground, cannon;
+var angle = 0;
 
 
 function setup() {
