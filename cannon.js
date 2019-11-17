@@ -11,18 +11,19 @@ class Cannon{
 
     display(){
         var pos = this.body.position;
-        var angle = this.body.angle;
+        //var angle = this.body.angle;
         if(keyIsDown(LEFT_ARROW)){
-            angle = angle - 5;
+            angle -=1
         }
         if(keyIsDown(RIGHT_ARROW)){
-            angle = angle + 5;
+            angle +=1
         }
         push();
         fill(255);
         translate(pos.x, pos.y);
         //rectMode(CENTER);
         rotate(angle);
+        strokeWeight(2);
         //Create the shooter from which the cannonballs will get dispersed
         rect(0, 0, this.width, this.height);
         pop();
