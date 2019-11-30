@@ -7,18 +7,18 @@ var engine, world;
 var ground, cannon;
 var angle = 0;
 
-
 function setup() {
   createCanvas(900, 550);
   engine = Engine.create();
   world = engine.world;
-  ground = new Ground(450, 510, 900, 10); 
-  cannon = new Cannon(75,height-125,60,30)
+  ground = new Ground(450, 530, 900, 50); 
+  cannon = new Cannon(75,height-125,60,30);
+  
 }
 
 function draw() {
   background(255);
-  
+  //console.log(angle);
   Engine.update(engine);
 
   //Display
