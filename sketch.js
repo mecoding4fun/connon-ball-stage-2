@@ -24,7 +24,7 @@ function preload() {
   H_letter_img_second = loadImage("alphabet8.png");
   O_letter_img = loadImage("alphabet15.png");
   O_letter_img_second = loadImage("alphabet15.png");
-  water_img = loadImage("water.png")
+  water_img = loadImage("water.png");
 }
 
 
@@ -69,8 +69,8 @@ function setup() {
       ground = new Ground(width/2, height-30,width, 50); 
       cannon2 = new Cannon2(75,height-125,60,30);
       ball = new Ball(width/2,height-125,50,50);
-  cannon = new Cannon(ball.body,cannon2.body);
-  //ball.body.velocity.x = 3;
+      cannon = new Cannon({x : 200,y:100},ball.body);
+  // ball.velocity.x = 3;
  // cannon2.debug = true;
 
 
