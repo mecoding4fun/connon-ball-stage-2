@@ -1,42 +1,39 @@
-class Cannon2{
+class Ball{
     constructor(x, y, width, height){
         var options = {
-            isStatic: true,
-
+            isStatic: true
         }
         this.body = Bodies.rectangle(x, y, width, height, options);
-
+        this.image = loadImage("sprites/bird.png");
         this.width = width;
         this.height = height;
         World.add(world, this.body);
     };
 
-    display(){
-        var pos = this.body.position;
-        if(keyIsDown(LEFT_ARROW) && angle > -55){
-            angle = angle - 5;            
+
+
+
+display(){
+    //this.body.position.x = mouseX;
+  //  this.body.position.y = mouseY;
+
+    var angle = this.body.angle;
+    push();
+    translate(this.body.position.x,this.body.position.y);
+    rotate(angle);
+    imageMode(CENTER);
+    image(this.image,120,height-125,10,10);
+   //console.log(mouse.x);
+    
+   //image(this.image,0,0,this.width,this.height);
+    pop();
+    // if(this.body.velocity.x > 10 && this.body.position.x > 200){
+    //     var position = [this.body.position.x, this.body.position.y];
+
+    
+    // }
+    
+
+
         }
-        if(keyIsDown(RIGHT_ARROW) && angle < 0){
-            angle = angle + 5;            
-        }
-        push();
-        fill(255);
-        translate(pos.x, pos.y);
-        rotate(angle);
-        //Create the shooter from which the cannonballs will get dispersed
-        rect(0, 0, this.width, this.height);
-        pop();
-        fill(255);
-
-
-
-        arc(70, height - 90, 90, 100, 180, 360);
-
-
-        rect(20, height-85, 100, 20);
-        rect(20, height-65, 100, 20);
-     
-                                                                                                                                                
-
-       }
-}   
+    }
